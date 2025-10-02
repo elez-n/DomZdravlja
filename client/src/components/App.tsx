@@ -13,6 +13,7 @@ function App() {
         {/* Ruta za odabranog pacijenta sa sidebarom i informacijama */}
         <Route path="/pacijenti/:id" element={<PacijentDetalji />}>
           <Route path="vakcine" element={<PrikazVakcinacija />} />
+          <Route path="vakcine1" element={<PrikazVakcinacija />} />
           <Route path="pregledi" element={<h2>Ovde idu pregledi...</h2>} />
           <Route
             path="karton"
