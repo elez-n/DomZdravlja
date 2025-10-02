@@ -15,6 +15,8 @@ function App() {
           <Route path="vakcine" element={<PrikazVakcinacija />} />
           <Route path="vakcine1" element={<PrikazVakcinacija />} />
           <Route path="pregledi" element={<h2>Ovde idu pregledi...</h2>} />
+          <Route path="pregledi2" element={<h2>Ovde idu pregledi...</h2>} />
+          <Route path="pregledi22" element={<h2>Ovde idu pregledi...</h2>} />
           <Route
             path="karton"
             element={<h2>Ovde ide karton pacijenta...</h2>}
