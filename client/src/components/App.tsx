@@ -1,30 +1,18 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PrikazPacijenata from "../features/PrikazPacijenata/PrikazPacijenata";
-import PrikazVakcinacija from "../features/PrikazPacijenata/PrikazVakcina";
-import PacijentDetalji from "../features/PrikazPacijenata/PacijentDetalji";
+import { Outlet } from "react-router-dom";
+import Sidebar from "./SideBar";
+
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* Lista svih pacijenata i info o njima */}
-        <Route path="/" element={<PrikazPacijenata />} />
-
-        {/* Ruta za odabranog pacijenta sa sidebarom i informacijama */}
-        <Route path="/pacijenti/:id" element={<PacijentDetalji />}>
-          <Route path="vakcine" element={<PrikazVakcinacija />} />
-          <Route path="vakcine1" element={<PrikazVakcinacija />} />
-          <Route path="pregledi" element={<h2>Ovde idu pregledi...</h2>} />
-          <Route path="pregledi2" element={<h2>Ovde idu pregledi...</h2>} />
-          <Route path="pregledi22" element={<h2>Ovde idu pregledi...</h2>} />
-          <Route
-            path="karton"
-            element={<h2>Ovde ide karton pacijenta...</h2>}
-          />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <main style={{marginLeft: '270px'}}>
+      <Sidebar />
+      <h1>Dom Zdravlja</h1>
+      <Outlet /> {/* tu će se prikazivati djeca rute */}
+      </main>
+    </div>
   );
 }
 
 export default App;
+
