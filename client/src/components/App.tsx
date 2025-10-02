@@ -7,7 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Lista svih pacijenata */}
+        {/* Lista svih pacijenata i info o njima */}
         <Route path="/" element={<PrikazPacijenata />} />
 
         {/* Ruta za odabranog pacijenta sa sidebarom */}
