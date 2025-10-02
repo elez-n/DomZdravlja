@@ -1,15 +1,12 @@
-import { useEffect, useState } from "react";
-import type { Pacijent } from "../../models/Pacijent";
+
 import { Button,  Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useFetchPacijentiQuery } from "./pacijentApi";
 
 export default function PrikazPacijenata() {
-   const [pacijenti, setPacijenti] = useState<Pacijent[]>([]);
-    useEffect(() => {
-    fetch('https://localhost:5001/api/pacijenti')
-      .then(response => response.json())
-      .then(data => setPacijenti(data))
-  }, [])
+const {data: pacijenti, isLoading} = useFetchPacijentiQuery();
+
+  if(isLoading || !pacijenti) return <div>Loading...</div>
     
 
     return (
