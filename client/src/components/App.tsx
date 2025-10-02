@@ -10,11 +10,14 @@ function App() {
         {/* Lista svih pacijenata */}
         <Route path="/" element={<PrikazPacijenata />} />
 
-        {/* Ruta za odabranog pacijenta sa sidebarom */}
+        {/* Ruta za odabranog pacijenta sa sidebarom i informacijama */}
         <Route path="/pacijenti/:id" element={<PacijentDetalji />}>
           <Route path="vakcine" element={<PrikazVakcinacija />} />
           <Route path="pregledi" element={<h2>Ovde idu pregledi...</h2>} />
-          <Route path="karton" element={<h2>Ovde ide karton pacijenta...</h2>} />
+          <Route
+            path="karton"
+            element={<h2>Ovde ide karton pacijenta...</h2>}
+          />
         </Route>
       </Routes>
     </BrowserRouter>
